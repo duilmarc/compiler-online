@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_API_URL : "http://35.199.71.59/exec-python"
 };
 
 /*
