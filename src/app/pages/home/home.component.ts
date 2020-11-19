@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   sendCode( query : string ){
     this._router.navigate(["result",query]);
   }
-  clean()
+  clean(element:any)
   {
     this._router.navigate(["home"]);
   }

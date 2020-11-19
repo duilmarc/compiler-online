@@ -21,8 +21,9 @@ export class ResultsComponent implements OnInit {
       this.query = params['query'];
       this._httpService.getResult(this.query).subscribe(( resultados : Results) => {
         this.results = resultados;
-      })
-      console.log(this.results);
+        
+        console.log(this.results);
+      })  
     });
   }
 

@@ -11,10 +11,20 @@
 <div class="card">
     <div class="card-header">
       Shell
-
     </div>
     <div class="card-body">    
-        <p *ngIf="results.code == 0" class="card-text"> >>>> {{ results.stdout }}</p>
-        <p *ngIf="results.code != 0" class="card-text"> >>>> {{ results.stderr }}</p>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="exampleFormControlTextarea1">Stdout</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6">{{ results.stdout }}</textarea>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleFormControlTextarea1">Stderr</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6">{{ results.stderr }}</textarea>
+          </div>
+        </div>
+      </form>
+
     </div>
 </div>
