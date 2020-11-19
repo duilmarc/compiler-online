@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { InitComponent } from './pages/init/init.component';
+import { ResultsComponent } from './pages/results/results.component';
 
 const routes: Routes = [
   {
-    path : 'home', component : HomeComponent
+    path : 'home', component : InitComponent
   },
   {
-    path : "**",
-    pathMatch : "full",
-    redirectTo : "home"
-  }
-];
+    path : 'result/:query', component : ResultsComponent
+  },
 
+];
+  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

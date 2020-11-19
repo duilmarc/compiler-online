@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Results } from "../models/results.model"
 import { environment } from "src/environments/environment";
 
@@ -15,13 +15,10 @@ export class HttpService {
 
   public getResult( valor : string ){
 
-    let json = { "code" : valor };
-    let headers = new HttpHeaders(); 
-    headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin','*');
-    headers.append( 'Access-Control-Allow-Methods','GET');
-    let params = new HttpParams().set("requestData", JSON.stringify(json));
-    
-    return this._http.get<Results>(this.baseUrl,{params : params});
-  }
+    let postData = { "code" : valor };
+
+    return this._http.post<Results>(this.baseUrl, postData);
+    };
+  
 }
+

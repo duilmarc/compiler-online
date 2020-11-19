@@ -1,0 +1,20 @@
+<div class="row" *ngIf="results.code == 0" > 
+  <div class="col-md-12">
+      <div class="alert alert-success" role="alert">Success code with 0</div>
+  </div>
+</div>
+<div class="row" *ngIf="results.code != 0" > 
+  <div class="col-md-12">
+      <div class="alert alert-danger" role="alert">Something went wrong</div>
+  </div>
+</div>
+<div class="card">
+    <div class="card-header">
+      Shell
+
+    </div>
+    <div class="card-body">    
+        <p *ngIf="results.code == 0" class="card-text"> >>>> {{ results.stdout }}</p>
+        <p *ngIf="results.code != 0" class="card-text"> >>>> {{ results.stderr }}</p>
+    </div>
+</div>

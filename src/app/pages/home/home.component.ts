@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Results } from 'src/app/models/results.model';
-import { HttpService } from 'src/app/services/http.service';
+
 
 @Component({
   selector: 'app-home',
@@ -9,19 +10,19 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class HomeComponent implements OnInit {
 
-  public results: Results;
 
-  public flag : boolean = false
-
-  constructor( public _httpService : HttpService ) { }
+  constructor( private _router : Router  ) { }
 
   ngOnInit(): void {
+    
   }
 
   sendCode( query : string ){
-    this._httpService.getResult(query).subscribe(( resultados : Results) => {
-      this.results = resultados;
-    })
-    console.log(this.results);
+    this._router.navigate(["result",query]);
+  }
+  clean()
+  {
+    this._router.navigate(["home"]);
   }
 }
+
